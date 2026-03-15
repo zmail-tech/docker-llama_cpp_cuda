@@ -1,0 +1,16 @@
+services:
+  llama_cpp:
+    image: llama-cpp:latest
+    container_name: llama_cpp
+    runtime: nvidia
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/models
+      - ./config/router.sh:/app/router.sh
+      - ./config/models.ini:/app/models.ini
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - LLAMA_API_KEY=${LLAMA_API_KEY}
+    restart: unless-stopped

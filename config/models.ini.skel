@@ -1,0 +1,40 @@
+version = {version}
+
+[*]
+flash-attn = {global_flash_attn}
+n-gpu-layers = {n_gpu_layers}
+c = {context_size}
+t = {temperature}
+b = {batch_size}
+ub = {ubatch_size}
+
+; {model_name}
+[{model_name}]
+m = {model_path}
+{mmproj = {mmproj_path}}
+ctx-size = {ctx_size}
+temp = {temp}
+top-p = {top_p}
+top-k = {top_k}
+min-p = {min_p}
+n-predict = {n_predict}
+ngl = {ngl}
+flash-attn = {flash_attn}
+cache-type-k = {cache_type_k}
+cache-type-v = {cache_type_v}
+chat-template-kwargs = {chat_template_kwargs}
+{jinja = {jinja}}
+
+; OmniCoder 9b Example
+;[Omnicoder-9B]
+;m = /models/omnicoder/omnicoder-9b-q4_k_m.gguf
+;ctx-size = 32000
+;temp = 0.6
+;top-p = 0.95
+;top-k = 20
+;n-predict = 16000
+;ngl = 99
+;flash-attn = auto
+;cache-type-k = q8_0
+;cache-type-v = q8_0
+;chat-template-kwargs = {"enable_thinking": true}
