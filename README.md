@@ -10,28 +10,15 @@ Before setting up this project, ensure you have:
 
 ## Installation Steps
 
-### 1. Clone llama.cpp
+### 1. Login to Github docker repository
 
 Clone the llama.cpp repository into this directory:
 
 ```bash
-git clone https://github.com/ggml-org/llama.cpp.git .
+docker login ghcr.io
 ```
 
-### 2. Build Docker Image
-
-Copy the build script into the llama.cpp directory and run it:
-
-```bash
-cd llama.cpp
-./build-docker.sh
-```
-
-> ⏰ Note: This build process can take a long time.
-
-Once complete, you will have a new Docker image named `llama-cpp:latest`.
-
-### 3. Configure Models
+### 2. Configure Models
 
 Return to the project root directory:
 
@@ -52,7 +39,7 @@ Edit `config/models.ini` with your desired model settings. This configuration fi
 
 > 📝 Example: See the [omnicoder 9b](./models/omnicoder-9b.Q4_K_M.gguf) for a working reference.
 
-### 4. Configure API Key
+### 3. Configure API Key
 
 Copy the environment template:
 
@@ -66,7 +53,7 @@ Enter your API key in the `.env` file. If you do not wish to use an API key, sim
 # - LLAMA_API_KEY=${LLAMA_API_KEY}
 ```
 
-### 5. Start the Container
+### 4. Start the Container
 
 Run the following command to start the Docker container:
 
@@ -74,7 +61,7 @@ Run the following command to start the Docker container:
 docker compose up -d
 ```
 
-### 6. Access the Web Interface
+### 5. Access the Web Interface
 
 Start the llama.cpp web interface:
 
