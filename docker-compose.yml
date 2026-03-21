@@ -1,6 +1,6 @@
 services:
   llama_cpp:
-    image: llama-cpp:latest
+    image: ghcr.io/ggml-org/llama.cpp:server-cuda12
     container_name: llama_cpp
     runtime: nvidia
     ports:
