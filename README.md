@@ -8,6 +8,20 @@ Before setting up this project, ensure you have:
 - NVIDIA drivers installed
 - NVIDIA Container Toolkit installed
 
+## Environment Variables
+
+Copy the environment template and configure your settings:
+
+```bash
+cp .env.skel .env
+```
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `DOCKER_TAG` | The Docker image tag to pull from ghcr.io (e.g., `server-cuda`, `server-cpu`) | `server-cuda` |
+| `PORT` | The host port to expose (maps to container port 8000) | `8000` |
+| `LLAMA_API_KEY` | API key for authentication (optional) | `Your secure api key here` |
+
 ## Installation Steps
 
 ### 1. Login to Github docker repository
@@ -40,12 +54,6 @@ Edit `config/models.ini` with your desired model settings. This configuration fi
 > 📝 Example: See the [omnicoder 9b](./models/omnicoder-9b.Q4_K_M.gguf) for a working reference.
 
 ### 3. Configure API Key
-
-Copy the environment template:
-
-```bash
-cp .env.skel .env
-```
 
 Enter your API key in the `.env` file. If you do not wish to use an API key, simply comment out the following line in `docker-compose.yml`:
 
